@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jogo educativo de Ciências no formato Verdadeiro ou Falso para alunos do 6º ano do Ensino Fundamental.">
+    <title>🔬 Ciências: Verdadeiro ou Falso | 6º Ano</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= CABEÇALHO ================= -->
+    <header class="cabecalho">
+        <h1>🔬 Ciências: Verdadeiro ou Falso</h1>
+        <p class="subtitulo-cabecalho">6º ano do Ensino Fundamental</p>
+    </header>
+
+    <!-- ================= CONTEÚDO PRINCIPAL ================= -->
+    <main class="conteudo">
+
+        <!-- ---------- TELA INICIAL ---------- -->
+        <section id="tela-inicio" class="tela ativa" aria-labelledby="titulo-inicio">
+            <div class="emoji-grande" aria-hidden="true">🧪</div>
+            <h2 id="titulo-inicio">Pronto para o desafio?</h2>
+            <p class="texto-destaque">
+                Leia a frase e decida rápido: ela é <strong>verdadeira</strong> ou <strong>falsa</strong>?
+            </p>
+
+            <ul class="lista-regras">
+                <li><span aria-hidden="true">⏱️</span> Você tem <strong>15 segundos</strong> por pergunta.</li>
+                <li><span aria-hidden="true">✅</span> Clique em <strong>VERDADEIRO</strong> ou <strong>FALSO</strong>.</li>
+                <li><span aria-hidden="true">🏆</span> Quanto mais rápido acertar, mais pontos ganha!</li>
+                <li><span aria-hidden="true">📚</span> São <strong>10 perguntas</strong> sobre seres vivos, corpo humano, Terra e Universo.</li>
+            </ul>
+
+            <button id="btn-comecar" class="botao botao-principal" type="button">Começar 🚀</button>
+        </section>
+
+        <!-- ---------- TELA DO JOGO ---------- -->
+        <section id="tela-jogo" class="tela" aria-label="Tela do jogo">
+            <div class="barra-status">
+                <div class="status-item">
+                    <span class="status-rotulo">Pergunta</span>
+                    <strong id="contador-pergunta">1/10</strong>
+                </div>
+                <div class="status-item">
+                    <span class="status-rotulo">Pontos</span>
+                    <strong id="placar">0</strong>
+                </div>
+                <div class="status-item">
+                    <span class="status-rotulo">Acertos</span>
+                    <strong id="acertos">0</strong>
+                </div>
+            </div>
+
+            <div class="timer">
+                <div class="timer-topo">
+                    <span>⏱️ Tempo</span>
+                    <span id="tempo-texto">15s</span>
+                </div>
+                <div class="timer-trilha">
+                    <div id="timer-barra" class="timer-barra"></div>
+                </div>
+            </div>
+
+            <div id="cartao-pergunta" class="cartao-pergunta">
+                <p id="texto-pergunta">Carregando pergunta...</p>
+            </div>
+
+            <div class="botoes-resposta">
+                <button id="btn-verdadeiro" class="botao botao-v" type="button">✔️ VERDADEIRO</button>
+                <button id="btn-falso" class="botao botao-f" type="button">✖️ FALSO</button>
+            </div>
+        </section>
+
+        <!-- ---------- TELA FINAL ---------- -->
+        <section id="tela-final" class="tela" aria-labelledby="final-titulo">
+            <div id="final-emoji" class="emoji-grande" aria-hidden="true">🏆</div>
+            <h2 id="final-titulo">Parabéns!</h2>
+            <p id="final-mensagem" class="texto-destaque">Você terminou o desafio!</p>
+
+            <div class="resultado-grid">
+                <div class="resultado-item"><span id="final-pontos">0</span><small>Pontos</small></div>
+                <div class="resultado-item"><span id="final-acertos">0</span><small>Acertos</small></div>
+                <div class="resultado-item"><span id="final-erros">0</span><small>Erros</small></div>
+                <div class="resultado-item"><span id="final-aproveitamento">0%</span><small>Aproveitamento</small></div>
+            </div>
+
+            <button id="btn-reiniciar" class="botao botao-principal" type="button">Jogar de novo 🔄</button>
+        </section>
+
+    </main>
+
+    <!-- ================= JANELA DE FEEDBACK ================= -->
+    <div id="feedback" class="feedback-overlay escondido" role="dialog" aria-modal="true" aria-labelledby="feedback-titulo">
+        <div id="feedback-caixa" class="feedback-caixa">
+            <div id="feedback-icone" class="feedback-icone" aria-hidden="true">✅</div>
+            <h3 id="feedback-titulo">Muito bem!</h3>
+            <p id="feedback-texto" class="feedback-texto"></p>
+            <p id="feedback-pontos" class="feedback-pontos"></p>
+            <button id="btn-proxima" class="botao botao-principal" type="button">Continuar ▶</button>
+        </div>
+    </div>
+
+    <!-- ================= RODAPÉ ================= -->
+    <footer class="rodape">
+        <p>Projeto educativo • Ciências • 6º ano do Ensino Fundamental</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
